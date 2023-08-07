@@ -1,0 +1,30 @@
+server:
+  port: 9092
+
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: admin
+    url: jdbc:mysql://localhost:3306/major_project
+    username: iqbal
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: allow
+        event:
+          merge:
+            entity_copy_observer: allow
+    show-sql: true
+    
+app:
+  messages:
+     citizenState: Rhode Island
+     riBenefit: This benefits are only for RI state citizens
+     invalidSSN: Invalid SSN
+     applicationCreationSuccess: Your application is created
+     duplicateSSN: Sorry only one application can be created per user
